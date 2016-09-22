@@ -271,6 +271,8 @@ rm -rf "$build_dir/.npm"
     > /dev/null
 ) &
 
+# Gradle
+GRADLE_TASK=${GRADLE_TASK-stage}
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-"https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz"}
 mkdir -p /tmp/jvm-common
 curl --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common --strip-components=1
